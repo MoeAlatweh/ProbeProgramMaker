@@ -7,7 +7,7 @@
 # Used to Update the Existing ProbePrograms using the new-updated Template.
 
 # VERSION:
-# ProbeProgramMakerVersion1.0.0
+# ProbeProgramMakerVersion1.0.1
 
 # LANGUAGE:
 # Python 3.7
@@ -50,7 +50,7 @@ from kivy.core.window import Window
 # ==================================================|
 # Import (AsyncImage) to set APP Image from Website.|
 # ==================================================|
-from kivy.uix.image import AsyncImage
+from kivy.uix.image import AsyncImage, Image
 
 # =============================================================|
 # Import (Builder) to create the KV file (APP Elements Layout).|
@@ -232,7 +232,7 @@ ScreenManager:
         on_press: root.manager.current = 'SettingScreen'        
 
     MDLabel:
-        text: '             Version 1.0.0'
+        text: '             Version 1.0.1'
         pos_hint: {'center_x':1.32,'center_y':0.07}
         font_style: 'Caption'
         theme_text_color: "Custom"
@@ -746,16 +746,16 @@ class HomeScreen(Screen):
                     # ===========================================================================|
                     # Get the line from the Existing ProbeProgram and copy it in the new template|
                     # ===========================================================================|
-                    substr = "CALL OPSTN WKO=1"
+                    substr = "WKO=1"
                     updated_probe_program_lines_index = line.find(substr)
-                    if (updated_probe_program_lines_index == 0):
+                    if (updated_probe_program_lines_index != -1):
                         OPSTN_WKO_1_variable_index = updated_probe_program_lines.index(line)
                         # print("OPSTN_WKO_1_variable_index:", OPSTN_WKO_1_variable_index)
                         # print(updated_probe_program_lines[OPSTN_WKO_1_variable_index])
                         for line in existing_probe_programs_lines:
-                            substr = "CALL OPSTN WKO=1"  # MAYBE CAN DELETE IT LATER
+                            substr = "WKO=1"  # MAYBE CAN DELETE IT LATER
                             existing_probe_programs_lines_index = line.find(substr)
-                            if (existing_probe_programs_lines_index == 0):
+                            if (existing_probe_programs_lines_index != -1):
                                 OPSTN_WKO_1_variable_index_in_existing_probe_program = \
                                     existing_probe_programs_lines.index(line)
                                 # print("OPSTN_WKO_1_variable_index for Existing Probe Program:",
@@ -769,16 +769,16 @@ class HomeScreen(Screen):
                     # ===========================================================================|
                     # Get the line from the Existing ProbeProgram and copy it in the new template|
                     # ===========================================================================|
-                    substr = "CALL OPSTN WKO=2"
+                    substr = "WKO=2"
                     updated_probe_program_lines_index = line.find(substr)
-                    if (updated_probe_program_lines_index == 0):
+                    if (updated_probe_program_lines_index != -1):
                         OPSTN_WKO_2_variable_index = updated_probe_program_lines.index(line)
                         # print("OPSTN_WKO_2_variable_index:", OPSTN_WKO_2_variable_index)
                         # print(updated_probe_program_lines[OPSTN_WKO_2_variable_index])
                         for line in existing_probe_programs_lines:
-                            substr = "CALL OPSTN WKO=2"  # MAYBE CAN DELETE IT LATER
+                            substr = "WKO=2"  # MAYBE CAN DELETE IT LATER
                             existing_probe_programs_lines_index = line.find(substr)
-                            if (existing_probe_programs_lines_index == 0):
+                            if (existing_probe_programs_lines_index != -1):
                                 OPSTN_WKO_2_variable_index_in_existing_probe_program = \
                                     existing_probe_programs_lines.index(line)
                                 # print("OPSTN_WKO_2_variable_index for Existing Probe Program:",
@@ -792,16 +792,16 @@ class HomeScreen(Screen):
                     # ===========================================================================|
                     # Get the line from the Existing ProbeProgram and copy it in the new template|
                     # ===========================================================================|
-                    substr = "CALL OPSTN WKO=3"
+                    substr = "WKO=3"
                     updated_probe_program_lines_index = line.find(substr)
-                    if (updated_probe_program_lines_index == 0):
+                    if (updated_probe_program_lines_index != -1):
                         OPSTN_WKO_3_variable_index = updated_probe_program_lines.index(line)
                         # print("OPSTN_WKO_3_variable_index:", OPSTN_WKO_3_variable_index)
                         # print(updated_probe_program_lines[OPSTN_WKO_3_variable_index])
                         for line in existing_probe_programs_lines:
-                            substr = "CALL OPSTN WKO=3"  # MAYBE CAN DELETE IT LATER
+                            substr = "WKO=3"  # MAYBE CAN DELETE IT LATER
                             existing_probe_programs_lines_index = line.find(substr)
-                            if (existing_probe_programs_lines_index == 0):
+                            if (existing_probe_programs_lines_index != -1):
                                 OPSTN_WKO_3_variable_index_in_existing_probe_program = \
                                     existing_probe_programs_lines.index(line)
                                 # print("OPSTN_WKO_3_variable_index for Existing Probe Program:",
@@ -815,16 +815,16 @@ class HomeScreen(Screen):
                     # ===========================================================================|
                     # Get the line from the Existing ProbeProgram and copy it in the new template|
                     # ===========================================================================|
-                    substr = "CALL OPSTN WKO=4"
+                    substr = "WKO=4"
                     updated_probe_program_lines_index = line.find(substr)
-                    if (updated_probe_program_lines_index == 0):
+                    if (updated_probe_program_lines_index != -1):
                         OPSTN_WKO_4_variable_index = updated_probe_program_lines.index(line)
                         # print("OPSTN_WKO_4_variable_index:", OPSTN_WKO_4_variable_index)
                         # print(updated_probe_program_lines[OPSTN_WKO_4_variable_index])
                         for line in existing_probe_programs_lines:
-                            substr = "CALL OPSTN WKO=4"  # MAYBE CAN DELETE IT LATER
+                            substr = "WKO=4"  # MAYBE CAN DELETE IT LATER
                             existing_probe_programs_lines_index = line.find(substr)
-                            if (existing_probe_programs_lines_index == 0):
+                            if (existing_probe_programs_lines_index != -1):
                                 OPSTN_WKO_4_variable_index_in_existing_probe_program = \
                                     existing_probe_programs_lines.index(line)
                                 # print("OPSTN_WKO_4_variable_index for Existing Probe Program:",
@@ -1138,10 +1138,9 @@ class ProbeProgramsMaker(MDApp):
                                      md_bg_color=[32 / 255.0, 32 / 255.0, 32 / 255.0, 1])
 
         # TO ADD PICTURE FOR THE APP FROM WEBSITE
-        app_image = AsyncImage(source=r'https://images.squarespace-cdn.com/content/v1/5cf6a7664ba6460001928b8b/'
-                                      '1559864161158-H9K9FU00BDGENWMNCLX7/Wiseco_Black.gif', size_hint_y=None,
-                               height=70, allow_stretch=True, pos_hint={'center_x': 0.5, 'center_y': 0.10},
-                               color=[150 / 255.0, 0 / 255.0, 0 / 255.0, 1])
+        app_image = Image(source=r'H:\CNC_Programming\WisecoApplications\WisecoApplicationsLogo/Wiseco.gif',
+                          size_hint_y=None, height=70, allow_stretch=True, pos_hint={'center_x': 0.5, 'center_y': 0.10},
+                          color=[150 / 255.0, 0 / 255.0, 0 / 255.0, 1])
         # TO ADD app_image TO app_box_layout TO DISPLAY IT IN THE APP SCREEN
         app_box_layout.add_widget(app_image)
 
